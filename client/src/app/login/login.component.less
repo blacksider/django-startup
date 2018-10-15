@@ -1,0 +1,99 @@
+@login-icon-width: 40px;
+@login-icon-padding: 10px;
+
+.login-body {
+  position: absolute;
+  top: 50%;
+  margin-top: -250px;
+  width: 98%;
+  height: 400px;
+  left: 1%;
+  padding: 50px;
+  overflow: auto;
+  background: #f7f7f7 url("../../assets/mosaic-pattern.png") repeat;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 15px #999999 inset;
+  -moz-box-shadow: 0 0 15px #999999 inset;
+  box-shadow: 0 0 15px #999999 inset;
+  .error-field {
+    height: 30px;
+  }
+}
+
+.login-form {
+  width: 400px;
+  margin: auto auto;
+  border: 1px solid #B0B6BE;
+  background: #fff;
+  padding: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 18px 6px -8px #999999, 0 0 2px #cccccc;
+  -moz-box-shadow: 0 18px 6px -8px #999999, 0 0 2px #cccccc;
+  box-shadow: 0 18px 6px -8px #999999, 0 0 2px #cccccc;
+
+  input {
+    width: 300px;
+  }
+
+  .login-wrap {
+    padding: 20px;
+  }
+
+  .login-title {
+    font-size: 30px;
+    text-align: center;
+    i {
+      font-weight: 300;
+      color: #34aadc;
+    }
+
+    .title {
+      color: #7e7e7e;
+      margin-left: 10px;
+    }
+  }
+
+  .input-group {
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+  }
+
+  .input-group-addon {
+    display: inline-block;
+    width: @login-icon-width;
+    padding: @login-icon-padding;
+    font-size: 20px;
+    color: #8b9199;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    background-color: #fff;
+    border: none;
+    border-radius: 0;
+  }
+
+  input[type="text"], input[type="password"] {
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+    border-radius: 0;
+  }
+
+  .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .form-control:focus {
+    z-index: 2;
+  }
+}

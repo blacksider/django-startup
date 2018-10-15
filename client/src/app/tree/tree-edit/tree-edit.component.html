@@ -1,0 +1,47 @@
+<section class="card">
+  <header class="card-header">
+    <span class="card-title">信息</span>
+  </header>
+  <div class="card-body">
+    <form class="form form-horizontal" #treeForm="ngForm">
+      <div class="row">
+        <label class="col-2" for="name">名称</label>
+        <div class="col-4">
+          <input id="name" name="name" type="text" class="form-control" [(ngModel)]="data.name" #name="ngModel"
+                 required maxlength="100">
+        </div>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)"
+             class="text-danger col-6">
+          <label *ngIf="name.errors.required">
+            请输入名称
+          </label>
+          <label *ngIf="name.errors.maxlength">
+            名称最多为100个字符
+          </label>
+        </div>
+      </div>
+      <div class="row space-top">
+        <label class="col-2" for="age">年龄</label>
+        <div class="col-4">
+          <input id="age" name="age" type="number" class="form-control control-inline" [(ngModel)]="data.age"
+                 #age="ngModel" required pattern="^[+]{0,1}(\d+)$">
+        </div>
+        <div *ngIf="age.invalid && (age.dirty || age.touched)"
+             class="text-danger col-6">
+          <label *ngIf="age.errors.required">
+            请输入年龄
+          </label>
+          <label *ngIf="age.errors.pattern">
+            年龄最小为0
+          </label>
+        </div>
+      </div>
+      <div class="row space-top">
+        <div class="col-10 offset-2">
+          <button class="btn btn-success btn-xs" (click)="save()" [disabled]="!treeForm.form.valid">保存</button>
+          <button class="btn btn-warning btn-xs space-left" routerLink="/main/tree/list">取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

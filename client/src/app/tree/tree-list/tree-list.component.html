@@ -1,0 +1,62 @@
+<section class="card with-table">
+  <header class="card-header">
+    <span class="card-title">列表</span>
+    <div class="pull-right">
+      <button class="btn btn-primary btn-xs" routerLink="/main/tree/edit">新建</button>
+    </div>
+    <div class="clearfix"></div>
+  </header>
+  <table class="table">
+    <thead>
+    <tr>
+      <th width="50">#</th>
+      <th>名称</th>
+      <th>年龄</th>
+      <th>上次更新时间</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody *ngIf="isLoading">
+    <tr>
+      <td colspan="5" align="center">
+        <div class="loading"></div>
+      </td>
+    </tr>
+    </tbody>
+    <tbody *ngIf="!isLoading">
+    <tr *ngFor="let tree of data.results; let index = index">
+      <td>{{ (queryPage.page - 1) * queryPage.size + (index + 1)}}</td>
+      <td>{{ tree.name }}</td>
+      <td>{{ tree.age }}</td>
+      <td>{{ tree.update_time | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+      <td>
+        <a href="javascript:;" class="space-right sm" title="查看" routerLink="/main/tree/detail" [queryParams]="{id: tree.id}">
+          <i class="fa fa-book"></i></a>
+        <a href="javascript:;" class="space-right sm" title="编辑" routerLink="/main/tree/edit" [queryParams]="{id: tree.id}">
+          <i class="fa fa-edit"></i></a>
+          <a href="javascript:;" class="space-right sm" title="删除" (click)="deleteData(tree.id)">
+          <i class="fa fa-trash-o"></i></a>
+      </td>
+    </tr>
+    <tr *ngIf="data.count === 0">
+      <td colspan="5" class="text-center">暂无数据</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<div class="content page">
+  <pagination class="float-left" [boundaryLinks]="true" [maxSize]="5"
+              [totalItems]="data.count" [(ngModel)]="queryPage.page"
+              [itemsPerPage]="queryPage.size" (pageChanged)="pageChanged($event)"
+              previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"></pagination>
+  <div class="float-right">
+    <span *ngIf="data.count > 0">{{ queryPage.page }}/{{ queryPage.getTotalPages(data.count)}}，</span>
+    <span>共{{ data.count }}条，每页</span>
+    <select title="每页大小" class="form-control form-control-sm control-inline page-item"
+            [(ngModel)]="queryPage.size" (change)="load()">
+      <option *ngFor="let size of [10, 20, 50]" [ngValue]="size">{{ size }}</option>
+    </select>
+    <span>条</span>
+  </div>
+  <div class="clearfix"></div>
+</div>

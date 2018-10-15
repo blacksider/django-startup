@@ -1,0 +1,128 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+@import "~font-awesome/css/font-awesome.css";
+@import "~ngx-toastr/toastr.css";
+@import "bootstrap";
+
+@default-space: 10px;
+@default-space-sm: 5px;
+@default-space-lg: 15px;
+
+html, body {
+  position: relative;
+  height: 100%;
+  font-size: 14px;
+  background: #44413e url("assets/mosaic-pattern.png") repeat;
+}
+
+.top-nav {
+  margin-bottom: 0;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    li {
+      width: 95px;
+      float: left;
+      margin-right: 1px;
+      a {
+        text-align: center;
+        display: block;
+        padding: 10px;
+        background-color: #e4e4e4;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        color: lighten(@black, 40%);
+        font-size: 14px;
+        text-decoration: none;
+        &:hover {
+          color: @primary-color;
+        }
+        i {
+          font-size: 18px;
+        }
+      }
+      .selected {
+        border-radius: 4px 4px 0 0;
+        background: @primary-color;
+        color: #fff;
+        text-shadow: 1px 1px 1px darken(@primary-color, 20%);
+        &:hover {
+          background: @primary-color;
+          color: #fff;
+          text-shadow: 1px 1px 1px darken(@primary-color, 20%);
+        }
+      }
+    }
+  }
+}
+
+.space-bottom {
+  margin-bottom: @default-space;
+  &.sm {
+    margin-bottom: @default-space-sm;
+  }
+  &.lg {
+    margin-bottom: @default-space-lg;
+  }
+}
+
+.space-top {
+  margin-top: @default-space;
+  &.sm {
+    margin-top: @default-space-sm;
+  }
+  &.lg {
+    margin-top: @default-space-lg;
+  }
+}
+
+.space-left {
+  margin-left: @default-space;
+  &.sm {
+    margin-left: @default-space-sm;
+  }
+  &.lg {
+    margin-left: @default-space-lg;
+  }
+}
+
+.space-right {
+  margin-right: @default-space;
+  &.sm {
+    margin-right: @default-space-sm;
+  }
+  &.lg {
+    margin-right: @default-space-lg;
+  }
+}
+
+.content {
+  background: #fff;
+  padding: 15px;
+  &.page {
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-top: none;
+    .pagination {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.control-inline {
+  display: inline-block;
+  width: auto;
+
+  &.lg {
+    width: 50%;
+  }
+}
+
+.loading {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: url("assets/loading.gif") center no-repeat;
+}

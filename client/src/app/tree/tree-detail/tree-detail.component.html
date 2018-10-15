@@ -1,0 +1,28 @@
+<section class="card">
+  <header class="card-header">
+    <span class="card-title">信息</span>
+    <div class="pull-right">
+      <button class="btn btn-primary btn-xs" routerLink="/main/tree/edit" [queryParams]="{id: data.id}">编辑</button>
+      <button class="btn btn-info btn-xs space-left" routerLink="/main/tree/list">返回</button>
+    </div>
+    <div class="clearfix"></div>
+  </header>
+  <div class="card-body">
+    <div class="row">
+      <label class="col-2">名称</label>
+      <label class="col-10">{{ data.name }}</label>
+    </div>
+    <div class="row">
+      <label class="col-2">年龄</label>
+      <label class="col-10">{{ data.age }}</label>
+    </div>
+    <div class="row">
+      <label class="col-2">创建时间</label>
+      <label class="col-10">{{ data.create_time | date: 'yyyy-MM-dd HH:mm:ss' }}</label>
+    </div>
+       <div class="row">
+      <label class="col-2">上次更新时间</label>
+      <label class="col-10">{{ data.update_time | date: 'yyyy-MM-dd HH:mm:ss' }}</label>
+    </div>
+  </div>
+</section>

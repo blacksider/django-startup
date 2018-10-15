@@ -1,0 +1,51 @@
+<header>
+  <div class="logo">测试项目</div>
+  <div class="right-nav">
+    <div class="warning-icon">
+      <a href="javascript:void(0)">
+        <i class="fa fa-bell"></i>
+      </a>
+      <span class="info-label badge badge-warning">3</span>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-primary">
+        {{ authInfo.username }}
+      </button>
+      <div class="btn-group" dropdown placement="bottom right">
+        <button id="button-alignment" dropdownToggle type="button"
+                class="btn btn-primary dropdown-toggle" aria-controls="dropdown-alignment">
+          <span class="caret"></span>
+        </button>
+        <ul id="dropdown-alignment" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+            role="menu" aria-labelledby="button-alignment">
+          <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)" routerLink="/main/user">个人信息</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="javascript:void(0)"
+                                 (click)="logout()">退出</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container-fluid">
+  <div class="top-nav">
+    <ul>
+      <li>
+        <a href="javascript:void(0)" routerLink="/main/tree" routerLinkActive="selected">
+          <div><i class="fa fa-laptop"></i></div>
+          列表
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" routerLink="/main/user" routerLinkActive="selected">
+          <div><i class="fa fa-user"></i></div>
+          个人信息
+        </a>
+      </li>
+    </ul>
+    <div class="clearfix">
+    </div>
+  </div>
+  <div class="dashboard-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+</div>
