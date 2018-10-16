@@ -96,9 +96,9 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'consoledb',
-        'USER': 'consoleadmin',
-        'PASSWORD': 'consoleadmindev',
+        'NAME': 'testdb',
+        'USER': 'testdbuser',
+        'PASSWORD': 'test',
         'HOST': 'localhost',
         'PORT': '',
     }
